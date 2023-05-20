@@ -7,15 +7,15 @@ const Shop = (props) => {
         props.setCartnumber(props.cartnumber+1)
         props.Addtocart(e)
     }
+    
     return(
+        
         <div className="left">
             <h1>This is the shop</h1>
             <div className="items">            
-                <div className="item" onClick={(e)=> cartfunc(e)}>1</div>
-                <div className="item" onClick={(e)=> cartfunc(e)}>2</div>
-                <div className="item" onClick={(e)=> cartfunc(e)}>3</div>
-                <div className="item" onClick={(e)=> cartfunc(e)}>4</div>
-                <div className="item" onClick={(e)=> cartfunc(e)}>5</div>
+            {props.items.map((item, index)=>(
+                <div className="item" onClick={()=> cartfunc(index)}>{item.text}</div>)
+            )}
             </div>
         </div>
     )
