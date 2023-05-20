@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./Homepage.js";
 import Shop from "./Shop.js";
@@ -12,16 +12,21 @@ const Router = () => {
   const [cart, setCart] = useState([])
   const [itemcartnum, setItemcartnum] = useState([0,0,0,0,0])
 
-  const Addtocart = (e)=>{
-    console.log(e.target.textContent);
-    (!cart.includes(e.target.innerHTML) ? 
-      setCart([...cart, e.target.innerHTML]): 
-        setItemcartnum(itemcartnum.map((item, index) =>{
-          return ((index === e.target.textContent-1) ? (item+1) : item)
-        }))
-    )
+  const increaseCart = (e)=>{
+    setItemcartnum(itemcartnum.map((item, index) =>{
+      return (index === e - 1) ? Number(item) + 1 : item
+    }))
   }
-  console.log(itemcartnum);
+  const decreaseCart = (e)=>{
+    setItemcartnum(itemcartnum.map((item, index) =>{
+      return (index === e - 1) ? Number(item) - 1 : item
+    }))
+  }
+  const Addtocart = (e)=>{
+    if(!cart.includes(e.target.innerHTML))
+      setCart([...cart, e.target.innerHTML]) 
+      increaseCart(e.target.textContent)
+    }
   return (
     <BrowserRouter>
       <Navigation cartstatus={cartstatus} setCartstatus={setCartstatus} />
@@ -30,7 +35,7 @@ const Router = () => {
           <Route path="/" element={<Homepage />}/>
           <Route path="/shop" element={<Shop Addtocart={Addtocart} cartnumber={cartnumber} setCartstatus={setCartstatus} setCartnumber={setCartnumber}/>}/>
         </Routes>
-        {cartstatus && <Cart itemcartnum={itemcartnum} cart={cart} cartnumber={cartnumber}/>}
+        {cartstatus && <Cart decreaseCart={decreaseCart} increaseCart={increaseCart} itemcartnum={itemcartnum} cart={cart} cartnumber={cartnumber}/>}
       </div>
     </BrowserRouter>
   );

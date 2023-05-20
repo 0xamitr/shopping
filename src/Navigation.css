@@ -22,4 +22,11 @@ a{
 
 .cart{
     background-color: aqua;
+    padding: 20px;
+}
+
+.cart-item{
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
