@@ -30,3 +30,24 @@ a{
     gap: 20px;
     align-items: center;
 }
+
+button{
+    width: 10px;
+    height: 10px;
+}
+
+.items{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 300px;
+}
+
+.item{
+    display: flex;
+    background-color: greenyellow;
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    align-content: center;
+}

@@ -19,16 +19,20 @@ const Router = () => {
     }))
   }
   const decreaseCart = (e)=>{
+    setCartnumber(cartnumber - 1)
     setItemcartnum(itemcartnum.map((item, index) =>{
+      if(index === e - 1 && item === 1){
+        setCart(cart.filter((item) =>{
+          return(item !== e)
+        }))
+      }
       if(item !== 0){
         return (index === e - 1) ? Number(item) - 1 : item
       }
       else{
-        setCart(cart.filter((item) =>{
-          return(item !== e)
-          }))
         return (index === e - 1) ? Number(item) : item
       }
+      
     }))
   }
   const Addtocart = (e)=>{
