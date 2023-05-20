@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./Homepage.js";
 import Shop from "./Shop.js";
@@ -14,19 +14,28 @@ const Router = () => {
 
   const increaseCart = (e)=>{
     setItemcartnum(itemcartnum.map((item, index) =>{
+      console.log(e);
       return (index === e - 1) ? Number(item) + 1 : item
     }))
   }
   const decreaseCart = (e)=>{
     setItemcartnum(itemcartnum.map((item, index) =>{
-      return (index === e - 1) ? Number(item) - 1 : item
+      if(item !== 0){
+        return (index === e - 1) ? Number(item) - 1 : item
+      }
+      else{
+        setCart(cart.filter((item) =>{
+          return(item !== e)
+          }))
+        return (index === e - 1) ? Number(item) : item
+      }
     }))
   }
   const Addtocart = (e)=>{
-    if(!cart.includes(e.target.innerHTML))
-      setCart([...cart, e.target.innerHTML]) 
+    if(!cart.includes(e.target.textContent))
+      setCart([...cart, e.target.textContent]) 
       increaseCart(e.target.textContent)
-    }
+  }
   return (
     <BrowserRouter>
       <Navigation cartstatus={cartstatus} setCartstatus={setCartstatus} />
