@@ -28,25 +28,39 @@ const Router = () => {
     const productIndex = updatedItems.findIndex(item => item.index === e); 
     console.log(cart);
     if (productIndex !== -1) {
-      updatedItems[productIndex] = { ...updatedItems[productIndex], count: cart[productIndex].count + 1 }; // Update the price of "product4"
+      updatedItems[productIndex] = { ...updatedItems[productIndex], count: cart[productIndex].count + 1 };
       setCart(updatedItems); 
     }
   };
+
   const calculateBill = (cart) =>{
     let total = 0
     cart.forEach(element => {
       total += element.count * element.price
     });
     return total
-  }
+  }      
   const decreaseCart = (e)=>{
     setCartnumber(cartnumber - 1)
-    const updatedItems = [...cart];
+    let updatedItems = [...cart];
     const productIndex = updatedItems.findIndex(item => item.index === e);
     if (productIndex !== -1) {
-      updatedItems[productIndex] = { ...updatedItems[productIndex], count: cart[productIndex].count - 1 }; // Update the price of "product4"
+      console.log("hello1");
+      updatedItems[productIndex] = { ...updatedItems[productIndex], count: cart[productIndex].count - 1 };
+      if(updatedItems[productIndex].count === 0){
+        console.log(updatedItems);
+        console.log(productIndex)
+        updatedItems = deleteElement(updatedItems, productIndex)
+      }
       setCart(updatedItems); 
     }
+  }
+
+  const deleteElement = (cart, indice) =>{
+    return cart.filter((item, index)=>{
+      console.log(index !== item.index)
+      return (index !== indice)
+    })
   }
   const Addtocart = (e)=>{
   const productIndex = cart.findIndex((item) => item.index === e);
@@ -58,6 +72,7 @@ const Router = () => {
     }
     increaseCart(e)
   }
+  console.log(cart)
   return (
     <BrowserRouter>
       <Navigation cartstatus={cartstatus} setCartstatus={setCartstatus} />
