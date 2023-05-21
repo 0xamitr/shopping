@@ -9,9 +9,9 @@ const Cart = (props) =>{
                 <div className="cart-item">
                     <h2 key={element.index}>{element.text}</h2>
                     <button onClick={()=> props.decreaseCart(element.index)}></button>
-                    <p>{props.itemcartnum[element.index][0]}</p>
+                    <p>{element.count}</p>
                     <button onClick={()=> props.increaseCart(element.index)}></button>
-                    <p>Rs.{props.itemcartnum[element.index][1]}</p>
+                    <p>Rs.{element.price}</p>
                     <p></p>
                 </div>
             ))}

@@ -4,7 +4,6 @@ import "./Navigation.css"
 const Shop = (props) => {
     const cartfunc = (e) =>{
         props.setCartstatus(true)
-        props.setCartnumber(props.cartnumber+1)
         props.Addtocart(e)
     }
     
