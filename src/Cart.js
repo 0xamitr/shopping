@@ -5,6 +5,7 @@ const Cart = (props) =>{
     return(
         <div className="cart">
             <h1>Cart: {props.cartnumber}</h1>
+            <button id="close" onClick={props.disableCart}></button>
             {props.cart.map((element) => (
                 <div className="cart-item">
                     <h2 key={element.index}>{element.text}</h2>

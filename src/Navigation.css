@@ -22,7 +22,10 @@ a{
 
 .cart{
     background-color: aqua;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
 }
 
 .cart-item{
@@ -40,6 +43,7 @@ button{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding-left: 300px;
     padding-right: 300px;
 }
 
@@ -50,4 +54,13 @@ button{
     width: 100px;
     justify-content: center;
     align-content: center;
+}
+
+#close{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    top: 20px;
+    right: 50px;
 }

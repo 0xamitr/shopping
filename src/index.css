@@ -8,12 +8,10 @@ html, *{
     justify-content: space-between;
 } */
 
-
-
 .cart{
     position: absolute;
-    top: 10vh;
-    left: 80vw;
-    width: 20vw;
-    height: 90vh;
+    top: 0vh;
+    left: 70vw;
+    width: 30vw;
+    height: 100vh;
 }

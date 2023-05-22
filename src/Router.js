@@ -18,6 +18,9 @@ const Router = () => {
     {text: "product5", price: 50}])
   const [cart, setCart] = useState([])
 
+  const disableCart = () =>{
+    setCartstatus(false)
+  }
   useEffect(() => {
     setBill(calculateBill(cart));
   }, [cart]);
@@ -72,7 +75,6 @@ const Router = () => {
     }
     increaseCart(e)
   }
-  console.log(cart)
   return (
     <BrowserRouter>
       <Navigation cartstatus={cartstatus} setCartstatus={setCartstatus} />
@@ -81,7 +83,7 @@ const Router = () => {
           <Route path="/" element={<Homepage />}/>
           <Route path="/shop" element={<Shop items={items} Addtocart={Addtocart} cartnumber={cartnumber} setCartstatus={setCartstatus}/>}/>
         </Routes>
-        {cartstatus && <Cart bill={bill} decreaseCart={decreaseCart} increaseCart={increaseCart}  cart={cart} cartnumber={cartnumber}/>}
+        {cartstatus && <Cart disableCart={disableCart} bill={bill} decreaseCart={decreaseCart} increaseCart={increaseCart}  cart={cart} cartnumber={cartnumber}/>}
       </div>
     </BrowserRouter>
   );
