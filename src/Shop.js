@@ -3,8 +3,10 @@ import "./Navigation.css"
 
 const Shop = (props) => {
     const cartfunc = (e) =>{
-        props.setCartstatus(true)
-        props.Addtocart(e)
+        if(props.cartstatus === false){
+            props.setCartstatus(true)
+            props.Addtocart(e)
+        }
     }
     return(
         <div className="left">

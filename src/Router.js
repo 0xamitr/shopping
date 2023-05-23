@@ -17,11 +17,12 @@ const Router = () => {
     {text: "product4", price: 40},
     {text: "product5", price: 50}])
   const [cart, setCart] = useState([])
-  
 
   const disableCart = () =>{
     setCartstatus(false)
   }
+  
+
   useEffect(() => {
     setBill(calculateBill(cart));
   }, [cart]);
@@ -76,15 +77,16 @@ const Router = () => {
     }
     increaseCart(e)
   }
+  console.log(cartstatus)
   return (
     <BrowserRouter>
       <Navigation cartstatus={cartstatus} setCartstatus={setCartstatus} />
       <div className="main">
         <Routes>
           <Route path="/" element={<Homepage />}/>
-          <Route path="/shop" element={<Shop items={items} Addtocart={Addtocart} cartnumber={cartnumber} setCartstatus={setCartstatus}/>}/>
+          <Route path="/shop" element={<Shop items={items} cartstatus={cartstatus} Addtocart={Addtocart} cartnumber={cartnumber} setCartstatus={setCartstatus}/>}/>
         </Routes>
-        {cartstatus && <Cart disableCart={disableCart} bill={bill} decreaseCart={decreaseCart} increaseCart={increaseCart}  cart={cart} cartnumber={cartnumber}/>}
+        {cartstatus && <Cart status={cartstatus} setCartstatus={setCartstatus} disableCart={disableCart} bill={bill} decreaseCart={decreaseCart} increaseCart={increaseCart}  cart={cart} cartnumber={cartnumber}/>}
       </div>
     </BrowserRouter>
   );
