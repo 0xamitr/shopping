@@ -17,6 +17,7 @@ const Router = () => {
     {text: "product4", price: 40},
     {text: "product5", price: 50}])
   const [cart, setCart] = useState([])
+  
 
   const disableCart = () =>{
     setCartstatus(false)

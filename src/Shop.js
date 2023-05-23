@@ -6,9 +6,7 @@ const Shop = (props) => {
         props.setCartstatus(true)
         props.Addtocart(e)
     }
-    
     return(
-        
         <div className="left">
             <h1>This is the shop</h1>
             <div className="items">            
