@@ -85,7 +85,7 @@ const Router = () => {
           <Route path="/" element={<Homepage />}/>
           <Route path="/shop" element={<Shop items={items} cartstatus={cartstatus} Addtocart={Addtocart} cartnumber={cartnumber} setCartstatus={setCartstatus}/>}/>
         </Routes>
-        {cartstatus && <Cart status={cartstatus} setCartstatus={setCartstatus} disableCart={disableCart} bill={bill} decreaseCart={decreaseCart} increaseCart={increaseCart}  cart={cart} cartnumber={cartnumber}/>}
+        {cartstatus && <Cart cartstatus={cartstatus} setCartstatus={setCartstatus} disableCart={disableCart} bill={bill} decreaseCart={decreaseCart} increaseCart={increaseCart}  cart={cart} cartnumber={cartnumber}/>}
       </div>
     </BrowserRouter>
   );

@@ -24,15 +24,6 @@ a{
     color: white;
 }
 
-.cart{
-    background-color: #faedcd;
-    display: flex;
-    border-radius: 5px;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: -10px 0px 10px 1px #aaaaaa;
-}
-
 .cart-item{
     display: flex;
     gap: 20px;
@@ -68,4 +59,23 @@ button{
     border-radius: 100%;
     top: 20px;
     right: 50px;
+}
+
+.cart{
+    position: fixed;
+    top: 0;
+    right: -30vw;
+    width: 30vw;
+    height: 100%;
+    background-color: #faedcd;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -10px 0px 10px 1px #aaaaaa;
+    transition: right 0.5s ease-in-out;
+}
+
+.trans {
+  right: 0;
 }

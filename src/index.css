@@ -7,10 +7,3 @@ html, *{
     filter: blur(2px)
 }
 
-.cart{
-    position: absolute;
-    top: 0vh;
-    left: 70vw;
-    width: 30vw;
-    height: 100vh;
-}
