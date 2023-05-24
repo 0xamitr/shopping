@@ -3,10 +3,9 @@ html, *{
     margin: 0;
 }
 
-/* .main{
-    display: flex;
-    justify-content: space-between;
-} */
+.blur > :not(.cart){
+    filter: blur(5px)
+}
 
 .cart{
     position: absolute;

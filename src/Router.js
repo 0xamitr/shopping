@@ -21,7 +21,6 @@ const Router = () => {
   const disableCart = () =>{
     setCartstatus(false)
   }
-  
 
   useEffect(() => {
     setBill(calculateBill(cart));
@@ -81,7 +80,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Navigation cartstatus={cartstatus} setCartstatus={setCartstatus} />
-      <div className="main">
+      <div className= {cartstatus ? "main blur": "main"}>
         <Routes>
           <Route path="/" element={<Homepage />}/>
           <Route path="/shop" element={<Shop items={items} cartstatus={cartstatus} Addtocart={Addtocart} cartnumber={cartnumber} setCartstatus={setCartstatus}/>}/>

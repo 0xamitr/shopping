@@ -1,6 +1,7 @@
 import React from "react"
 import "./Navigation.css"
 import {Link} from "react-router-dom"
+import "./index.css"
 
 const Navigation = (props) => {
     const changeCartstatus = () =>{
@@ -10,7 +11,7 @@ const Navigation = (props) => {
             props.setCartstatus(true)
     }
     return(
-        <div className="nav">
+        <div className={props.cartstatus ? "nav blur": "nav"}>
             <ul className="nav-links">
                 <Link to="/">
                     <li>HOME</li>
