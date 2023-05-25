@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from "react";
 import "./Navigation.css";
 
@@ -38,7 +39,7 @@ const Cart = (props) => {
         </div>
       ))}
       <h2>Total: Rs.{props.bill}</h2>
-    </div>
+    </div> 
   );
 };
 

@@ -52,8 +52,6 @@ const Router = () => {
       console.log("hello1");
       updatedItems[productIndex] = { ...updatedItems[productIndex], count: cart[productIndex].count - 1 };
       if(updatedItems[productIndex].count === 0){
-        console.log(updatedItems);
-        console.log(productIndex)
         updatedItems = deleteElement(updatedItems, productIndex)
       }
       setCart(updatedItems); 
