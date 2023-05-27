@@ -10,10 +10,15 @@ const Shop = (props) => {
     }
     return(
         <div className="left">
-            <h1>This is the shop</h1>
             <div className="items">            
             {props.items.map((item, index)=>(
-                <div className="item" onClick={()=> cartfunc(index)}>{item.text}</div>)
+                <div className="item" onClick={()=> cartfunc(index)}>
+                    <img className="shop-image" src={item.src} alt="product_image"/>
+                    <div>
+                        <h2>{item.text}</h2>
+                        <p>Rs.{item.price}</p>
+                    </div>
+                </div>)
             )}
             </div>
         </div>

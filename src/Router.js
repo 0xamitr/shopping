@@ -11,11 +11,16 @@ const Router = () => {
   const [cartnumber, setCartnumber] = useState(0)
   const [bill, setBill] = useState(0)
   const [items] = useState([
-    {text: "product1", price: 10},
-    {text: "product2", price: 20},
-    {text: "product3", price: 30},
-    {text: "product4", price: 40},
-    {text: "product5", price: 50}])
+    {text: "product1", price: 10, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"},
+    {text: "product2", price: 20, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"},
+    {text: "product3", price: 30, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"},
+    {text: "product4", price: 40, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"},
+    {text: "product5", price: 50, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"},
+    {text: "product6", price: 60, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"},
+    {text: "product7", price: 70, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"},
+    {text: "product8", price: 80, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"},
+    {text: "product9", price: 90, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"},
+    {text: "product10", price: 100, src: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"}])
   const [cart, setCart] = useState([])
 
   const disableCart = () =>{

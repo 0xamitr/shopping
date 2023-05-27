@@ -36,22 +36,23 @@ button{
 }
 
 .items{
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns:auto auto auto;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
     justify-content: space-around;
-    padding-left: 300px;
-    padding-right: 300px;
+    row-gap: 5vh;
 }
 
 .item{
     display: flex;
-    background-color: greenyellow;
-    height: 100px;
-    width: 100px;
-    justify-content: center;
-    align-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30vh;
+    height: 34vh;
 }
-
 #close{
     position: absolute;
     height: 50px;
@@ -78,4 +79,9 @@ button{
 
 .trans {
   right: 0;
+}
+
+.shop-image{
+    aspect-ratio : 1 / 1;
+    width: 100%;
 }

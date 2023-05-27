@@ -6,4 +6,3 @@ html, *{
 .blur > :not(.cart){
     filter: blur(2px)
 }
-
