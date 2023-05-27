@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/shopping/static/css/main.3334315f.css",
+    "main.css": "/shopping/static/css/main.5158a123.css",
     "main.js": "/shopping/static/js/main.086038e1.js",
     "index.html": "/shopping/index.html",
-    "main.3334315f.css.map": "/shopping/static/css/main.3334315f.css.map",
+    "main.5158a123.css.map": "/shopping/static/css/main.5158a123.css.map",
     "main.086038e1.js.map": "/shopping/static/js/main.086038e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.3334315f.css",
+    "static/css/main.5158a123.css",
     "static/js/main.086038e1.js"
   ]
 }
