@@ -30,6 +30,7 @@ const Cart = (props) => {
       <button id="close" onClick={props.disableCart}></button>
       {props.cart.map((element) => (
         <div className="cart-item" key={element.index}>
+          <img className="cart-image" src={element.src} alt="earth" />
           <h2>{element.text}</h2>
           <button onClick={() => props.decreaseCart(element.index)}></button>
           <p>{element.count}</p>
