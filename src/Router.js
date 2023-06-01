@@ -65,7 +65,6 @@ const Router = () => {
 
   const deleteElement = (cart, indice) =>{
     return cart.filter((item, index)=>{
-      console.log(index !== item.index)
       return (index !== indice)
     })
   }

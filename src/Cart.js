@@ -14,7 +14,15 @@ const Cart = (props) => {
       } else {
         setFirstcart(true);
       }
+      if(e.target.className === "buttoninc"){
+        props.increaseCart(e.index)
+      }
+      if(e.target.className === "buttondec"){
+        props.decreaseCart(e.index)
+        console.log(e.index)
+      }
     };
+   
     document.addEventListener("click", handler);
 
     setCartVisible(true);
@@ -32,9 +40,9 @@ const Cart = (props) => {
         <div className="cart-item" key={element.index}>
           <img className="cart-image" src={element.src} alt="earth" />
           <h2>{element.text}</h2>
-          <button onClick={() => props.decreaseCart(element.index)}></button>
+          <button className="buttondec" index={}></button>
           <p>{element.count}</p>
-          <button onClick={() => props.increaseCart(element.index)}></button>
+          <button className="buttoninc"></button>
           <p>Rs.{element.price}</p>
           <p></p>
         </div>
