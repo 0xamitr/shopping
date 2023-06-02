@@ -34,8 +34,7 @@ const Router = () => {
   const increaseCart = (e) => {
     setCartnumber(cartnumber + 1)
     const updatedItems = [...cart]; 
-    const productIndex = updatedItems.findIndex(item => item.index === e); 
-    console.log(cart);
+    const productIndex = updatedItems.findIndex(item => item.index == e); 
     if (productIndex !== -1) {
       updatedItems[productIndex] = { ...updatedItems[productIndex], count: cart[productIndex].count + 1 };
       setCart(updatedItems); 
@@ -52,9 +51,8 @@ const Router = () => {
   const decreaseCart = (e)=>{
     setCartnumber(cartnumber - 1)
     let updatedItems = [...cart];
-    const productIndex = updatedItems.findIndex(item => item.index === e);
+    const productIndex = updatedItems.findIndex(item => item.index == e);
     if (productIndex !== -1) {
-      console.log("hello1");
       updatedItems[productIndex] = { ...updatedItems[productIndex], count: cart[productIndex].count - 1 };
       if(updatedItems[productIndex].count === 0){
         updatedItems = deleteElement(updatedItems, productIndex)
@@ -78,7 +76,7 @@ const Router = () => {
     }
     increaseCart(e)
   }
-  console.log(cartstatus)
+  console.log(cart)
   return (
     <BrowserRouter>
       <Navigation cartstatus={cartstatus} setCartstatus={setCartstatus} />

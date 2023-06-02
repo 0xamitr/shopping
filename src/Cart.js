@@ -15,11 +15,12 @@ const Cart = (props) => {
         setFirstcart(true);
       }
       if(e.target.className === "buttoninc"){
-        props.increaseCart(e.index)
+        console.log(e.target.attributes.index.value)
+        props.increaseCart(e.target.attributes.index.value)
       }
       if(e.target.className === "buttondec"){
-        props.decreaseCart(e.index)
-        console.log(e.index)
+        console.log(e.target.attributes.index.value)
+        props.decreaseCart(e.target.attributes.index.value)
       }
     };
    
@@ -40,9 +41,9 @@ const Cart = (props) => {
         <div className="cart-item" key={element.index}>
           <img className="cart-image" src={element.src} alt="earth" />
           <h2>{element.text}</h2>
-          <button className="buttondec" index={}></button>
+          <button className="buttondec" index={element.index}></button>
           <p>{element.count}</p>
-          <button className="buttoninc"></button>
+          <button className="buttoninc" index={element.index}></button>
           <p>Rs.{element.price}</p>
           <p></p>
         </div>
