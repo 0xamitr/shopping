@@ -3,6 +3,9 @@ html, *{
     margin: 0;
 }
 
+html{
+    width: 100vw:
+}
 .blur > :not(.cart){
     filter: blur(2px)
 }
